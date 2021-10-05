@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 class CircularAction extends StatelessWidget {
   final IconData iconData;
   final Color bgColor;
-  final String textAction;
-  final Function action;
+  final String? textAction;
+  final Function? action;
   const CircularAction({
-    Key key,
+    Key? key,
     this.iconData = Icons.smartphone,
     this.bgColor = Colors.indigo,
     this.textAction,
@@ -23,7 +23,7 @@ class CircularAction extends StatelessWidget {
             backgroundColor: bgColor,
             radius: 36,
           ),
-          onTap: action,
+          onTap: action as void Function()?,
         ),
         SizedBox(height: 16),
         Text("${textAction ?? "No action"}"),
